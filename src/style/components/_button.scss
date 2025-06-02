@@ -1,0 +1,63 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+// .button {
+//   width: fit-content;
+//   height: fit-content;
+//   background-color: $secondary;
+//   padding: 6px;
+//   padding-left: 32px;
+//   border-radius: 100px;
+//   font-weight: 600;
+//   @include flex-space-between;
+//   gap: 12px;
+//   position: relative;
+//   cursor: pointer;
+
+//   div {
+//     color: $primary;
+//     position: relative;
+//     z-index: 10;
+//   }
+
+//   .icon {
+//     width: 40px;
+//     height: 40px;
+//     background-color: $primary;
+//     border-radius: 50%;
+//     @include flex-center;
+//     position: relative;
+//     z-index: 5;
+//   }
+
+//   &::after {
+//     content: "";
+//     width: 40px;
+//     height: 40px;
+//     position: absolute;
+//     top: 50%;
+//     right: 6px;
+//     transform: translate(0, -50%);
+//     background-color: $primary;
+//     border-radius: 100px;
+//     transition: all 0.25s linear;
+//     z-index: 1;
+//   }
+
+//   &:hover {
+//     outline: 2px solid $secondary;
+
+//     div {
+//       color: $secondary;
+//     }
+
+//     &::after {
+//       right: 0;
+//       position: absolute;
+//       width: 100%;
+//       height: 100%;
+//     }
+
+//   }
+// }
+

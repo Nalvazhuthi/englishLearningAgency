@@ -1,0 +1,130 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.topics-container {
+  @include flex-center;
+  flex-direction: column;
+
+  padding: 50px 100px;
+
+  @include respond(xl) {
+    padding: 50px 50px;
+  }
+
+  @include respond(md) {
+    padding: 0 50px;
+    gap: 12px;
+  }
+
+  @include respond(sm) {
+    padding: 20px;
+  }
+
+
+  .topics-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .topic {
+      width: 100%;
+      @include flex-space-between;
+      padding: 48px 0;
+      border-bottom: 1px solid $secondary;
+      transition: all 0.2s linear;
+      cursor: pointer;
+
+      @include respond(sm) {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px 0;
+        gap: 16px;
+      }
+
+      .topic-left,
+      .topic-right {
+        display: flex;
+        align-items: center;
+        font-size: 50px;
+
+        @include respond(sm) {
+          font-size: 20px;
+        }
+      }
+
+      .topic-left {
+        gap: 12px;
+
+        .topic-index {
+          font-weight: 600;
+          font-size: 24px;
+          border: 1px solid $highlight;
+          padding: 12px 30px;
+          border-radius: 100px;
+          color: $highlight;
+
+          @include respond(sm) {
+            font-size: 14px;
+            padding: 8px 20px;
+          }
+        }
+
+        .topic-name {
+          font-weight: 600;
+          color: $text-gray;
+          font-size: 50px;
+          transition: all 0.2s linear;
+
+          @include respond(md) {
+            font-size: 24px;
+          }
+
+          @include respond(sm) {
+            font-size: 20px;
+          }
+        }
+      }
+
+      .topic-right {
+        gap: 6px;
+
+        @include respond(sm) {
+          align-items: center;
+          justify-content: flex-end;
+          width: 100%;
+        }
+
+        .podcasts {
+          color: $text-gray;
+          font-size: 16px;
+
+          @include respond(sm) {
+            font-size: 14px;
+          }
+        }
+
+        .viewAll {
+          @include flex-center;
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+
+      &:hover {
+        padding-left: 30px;
+
+        @include respond(sm) {
+          padding-left: 0;
+        }
+
+        .topic-left {
+          .topic-name {
+            color: $highlight;
+          }
+        }
+      }
+    }
+  }
+}

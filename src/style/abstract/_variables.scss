@@ -1,0 +1,33 @@
+@use "functions";
+
+// Colors
+$primary: #f7f7f5;
+$secondary: #d2bbff;
+$highlight: #4208b3;
+
+$text-color: #000000;
+$text-gray: #a4a4a4;
+$text-highlight: #4208b3;
+
+$orange: #ffbb22;
+$red: #f75b35;
+$blue: #3939ff;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 32px;
+
+// Font sizes
+$font-sm: 0.875rem;
+$font-md: 1rem;
+$font-lg: 1.5rem;
+
+// Border radius
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;
+
+// Shadows
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);

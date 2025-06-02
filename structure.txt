@@ -1,0 +1,97 @@
+project-root/
+├── public/                   # Static files
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── robots.txt
+│   └── assets/                # Static assets like images, fonts
+│       ├── images/
+│       └── fonts/
+│
+├── src/
+│   ├── api/                   # API services and configurations
+│   │   ├── axiosConfig.ts
+│   │   ├── authApi.ts
+│   │   └── userApi.ts
+│   │
+│   ├── assets/                # Dynamic assets (processed by webpack)
+│   │   ├── images/
+│   │   ├── svgs/              # SVG components
+│   │   └── styles/
+│   │       ├── _variables.scss
+│   │       ├── _mixins.scss
+│   │       └── global.scss
+│   │
+│   ├── components/            # Shared UI components
+│   │   ├── common/            # Basic reusable components
+│   │   │   ├── Button/
+│   │   │   │   ├── Button.tsx
+│   │   │   │   ├── Button.styles.ts
+│   │   │   │   └── Button.test.tsx
+│   │   │   ├── Input/
+│   │   │   └── ...
+│   │   │
+│   │   ├── layout/            # Layout components
+│   │   │   ├── Header/
+│   │   │   ├── Footer/
+│   │   │   └── Sidebar/
+│   │   │
+│   │   └── features/          # Feature-specific components
+│   │       ├── Auth/
+│   │       └── Dashboard/
+│   │
+│   ├── config/                # App configurations
+│   │   ├── routes.ts
+│   │   ├── constants.ts
+│   │   └── env.ts
+│   │
+│   ├── contexts/              # React contexts
+│   │   ├── AuthContext/
+│   │   └── ThemeContext/
+│   │
+│   ├── hooks/                 # Custom hooks
+│   │   ├── useAuth.ts
+│   │   ├── useLocalStorage.ts
+│   │   └── ...
+│   │
+│   ├── pages/                 # Page components (route-level)
+│   │   ├── Home/
+│   │   │   ├── Home.tsx
+│   │   │   ├── Home.styles.ts
+│   │   │   └── components/    # Page-specific components
+│   │   ├── Auth/
+│   │   │   ├── Login/
+│   │   │   └── Register/
+│   │   └── Dashboard/
+│   │
+│   ├── store/                 # State management
+│   │   ├── slices/            # Redux toolkit slices
+│   │   │   ├── authSlice.ts
+│   │   │   └── userSlice.ts
+│   │   ├── hooks.ts           # Typed redux hooks
+│   │   └── store.ts
+│   │
+│   ├── types/                 # Global TypeScript types
+│   │   ├── auth.types.ts
+│   │   ├── components.types.ts
+│   │   └── index.ts
+│   │
+│   ├── utils/                 # Utility functions
+│   │   ├── helpers.ts
+│   │   ├── validators.ts
+│   │   └── ...
+│   │
+│   ├── App.tsx                # Main App component
+│   ├── App.test.tsx
+│   ├── index.tsx              # Entry point
+│   └── react-app-env.d.ts     # React type declarations
+│
+├── .env                       # Environment variables
+├── .env.development
+├── .env.production
+│
+├── .eslintrc.js               # ESLint config
+├── .prettierrc.js             # Prettier config
+├── jest.config.js             # Jest config
+├── tsconfig.json              # TypeScript config
+├── package.json
+└── README.md

@@ -1,0 +1,41 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.section {
+  width: 100%;
+  height: 100vh;
+}
+
+.content-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.highlight {
+  color: $highlight;
+  display: inline;
+}
+
+.page-container {
+  @include flex-center;
+  flex-direction: column;
+  gap: 32px;
+  .header {
+    padding: 20px 40px;
+    color: $text-color;
+    background-color: $secondary;
+    text-align: center;
+    font-size: 4vw;
+    border-radius: 48px 48px 48px 0;
+    font-weight: 600;
+  }
+
+  @include respond(md) {
+    .header {
+      width: 90%;
+      font-size: 6vw;
+    }
+  }
+}
