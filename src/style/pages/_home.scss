@@ -107,8 +107,8 @@
       padding: 50px 50px;
     }
     @include respond(md) {
-      height: calc(100vh - 0px);
-      justify-content: start;
+      // height: calc(100vh - 0px);
+      // justify-content: start;
       padding: 0px 50px;
       gap: 12px;
     }

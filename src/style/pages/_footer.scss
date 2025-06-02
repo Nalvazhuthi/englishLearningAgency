@@ -6,31 +6,38 @@
   flex-direction: column;
   gap: 32px;
   padding-bottom: 12px;
+
   .heading {
     text-align: center;
     width: 50%;
     color: $text-color;
     font-weight: 600;
     font-size: 3vw;
+
     .highlight {
       font-size: 3vw;
       font-weight: 600;
     }
+
     @include respond(md) {
       font-size: 5vw;
       width: 80%;
+
       .highlight {
         font-size: 5vw;
       }
     }
   }
+
   button {
     @include primary-button;
     transition: all 0.2s linear;
+
     &:hover {
       transform: translateY(-2px);
     }
   }
+
   .section-wrapper {
     display: flex;
     gap: 32px;
@@ -40,26 +47,35 @@
     @include respond(md) {
       width: 80%;
     }
+
     .each-section {
       display: flex;
       flex-direction: column;
       gap: 6px;
+
       .section-header,
       .section-navs {
         color: $text-color;
         display: flex;
         flex-direction: column;
         gap: 6px;
+
         .section-nav {
           color: $text-color;
           cursor: pointer;
+
+          &:hover {
+            color: $text-highlight;
+          }
         }
       }
+
       .section-header {
         font-weight: 600;
       }
     }
   }
+
   .polices-social-wrapper {
     padding-top: 20px;
     border-top: 1px solid $secondary;
