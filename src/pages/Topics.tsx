@@ -1,5 +1,8 @@
-import React, { useState } from "react";
-import topicImage from "../assets/images/topic/topic.jpg";
+import React, { Suspense, useState } from "react";
+import topicImage1 from "../assets/images/topic/Entrepreneurship.jpg";
+import topicImage2 from "../assets/images/topic/topic.jpg";
+import topicImage3 from "../assets/images/topic/Food & Beverage.png";
+import topicImage4 from "../assets/images/topic/Sustainability.jpg";
 import { ViewAllIcon } from "../assets/svgs/exportIcons";
 
 // Define Topic type
@@ -11,10 +14,10 @@ type Topic = {
 
 const Topics = () => {
   const topics: Topic[] = [
-    { topicImage: topicImage, topic: "Entrepreneurship", totalTopics: 124 },
-    { topicImage: topicImage, topic: "Wellness", totalTopics: 24 },
-    { topicImage: topicImage, topic: "Food & Beverage", totalTopics: 65 },
-    { topicImage: topicImage, topic: "Sustainability", totalTopics: 75 },
+    { topicImage: topicImage1, topic: "Entrepreneurship", totalTopics: 124 },
+    { topicImage: topicImage2, topic: "Wellness", totalTopics: 24 },
+    { topicImage: topicImage3, topic: "Food & Beverage", totalTopics: 65 },
+    { topicImage: topicImage4, topic: "Sustainability", totalTopics: 75 },
   ];
 
   // hoveredTopic can be Topic or null initially
@@ -59,26 +62,30 @@ const Topics = () => {
       </div>
 
       {/* Show image near cursor if hoveredTopic is not null */}
+
       {hoveredTopic && (
-        <img
-          src={hoveredTopic.topicImage}
-          alt={hoveredTopic.topic}
-          style={{
-            position: "fixed",
-            top: cursorPos.y + 15,
-            left: cursorPos.x + 15,
-            width: 300,
-            height: 180,
-            pointerEvents: "none",
-            borderRadius: 8,
-            boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
-            transition: "top 0.1s ease, left 0.1s ease",
-            zIndex: 9999,
-            objectFit: "cover",
-            transform: "translate(-50%,-50%)"
-          }}
-        />
+        <Suspense fallback={<div className="loading-screen">Loading...</div>}>
+          <img
+            src={hoveredTopic.topicImage}
+            alt={hoveredTopic.topic}
+            style={{
+              position: "fixed",
+              top: cursorPos.y + 15,
+              left: cursorPos.x + 15,
+              width: 300,
+              height: 180,
+              pointerEvents: "none",
+              borderRadius: 8,
+              boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+              transition: "top 0.1s ease, left 0.1s ease",
+              zIndex: 1,
+              objectFit: "cover",
+              transform: "translate(-50%,-50%)"
+            }}
+          />
+        </Suspense>
       )}
+
     </div>
   );
 };

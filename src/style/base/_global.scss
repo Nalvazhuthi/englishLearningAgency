@@ -39,3 +39,42 @@
     }
   }
 }
+
+
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;           // full viewport height
+  width: 100vw;            // full viewport width
+  background: #f0f8ff;     // light blue background, calm and educational
+  color: #003366;          // dark navy text, serious yet approachable
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  user-select: none;
+  position: fixed;         // keep visible on screen while loading
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  // Add subtle animation for loading dots
+  &::after {
+    content: " .";
+    animation: dots 1.5s steps(3, end) infinite;
+  }
+}
+
+@keyframes dots {
+  0%, 20% {
+    content: " .";
+  }
+  40% {
+    content: " ..";
+  }
+  60%, 100% {
+    content: " ...";
+  }
+}

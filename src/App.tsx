@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import About from "./pages/About"
 import Footer from "./pages/Footer"
 import Home from "./pages/Home"
@@ -7,13 +8,15 @@ import "./style/main.scss"
 
 const App = () => {
   return (
-    <div className="content-container">
-      <Home />
-      <Topics />
-      <About />
-      <Prices />
-      <Footer />
-    </div>
+    <Suspense fallback={<div className="loading-screen">Loading...</div>}>
+      <div className="content-container">
+        <Home />
+        <Topics />
+        <About />
+        <Prices />
+        <Footer />
+      </div>
+    </Suspense>
   )
 }
 
